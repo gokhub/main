@@ -16,8 +16,11 @@
         url(https://images.pexels.com/photos/2166927/pexels-photo-2166927.jpeg?cs=srgb&dl=animal-aquarium-aquatic-2166927.jpg&fm=jpg)
           no-repeat center center/cover;
         font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        justify-content: center;
         align-items: center;
         height: 100vh;
+        flex-direction: column;
     }
 
     .container {
@@ -27,10 +30,11 @@
     }
 
     .pfp-frame {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
+
     .pfp {
       width: 200px;
       border-radius: 50%;
@@ -48,10 +52,7 @@
       width: 300px;
       text-align: center;
       margin: 10px;
-    }
-
-    .btn:hover {
-      box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
+      animation: boxHover 2s infinite;
     }
 
     .btn:before {
@@ -67,15 +68,33 @@
         rgba(146, 148, 248, 0.4),
         transparent
       );
-      transition: all 650ms;
+      animation: highlight 2s infinite;
     }
 
-    .btn:hover:before {
-      left: 100%;
+    @keyframes highlight {
+      0% {
+        left: -100%;
+      }
+      50% {
+        left: 100%;
+      }
+      100% {
+        left: -100%;
+      }
     }
+
+    @keyframes boxHover {
+      0%, 100% {
+        box-shadow: 1px 1px 15px 5px rgba(146, 148, 248, 0);
+      }
+      50% {
+        box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
+      }
+    }
+
     h1 {
         color: white;
-        font-family: arial;
+        font-family: Arial;
         margin-top: 10px;
         margin-bottom: 10px;
     }
@@ -88,8 +107,7 @@
 </div>
   <div class="container">
     <a href="https://gokhub.github.io/Catch-me/catchme.html" class="btn">Catch me if you can</a>
-    <a href="https://gokhub.github.io/RockPaperScissors/RockPaperScissors.html"
-    class="btn">Rock Paper Scissors</a>
+    <a href="https://gokhub.github.io/RockPaperScissors/RockPaperScissors.html" class="btn">Rock Paper Scissors</a>
   </div>
 </body>
 </html>
